@@ -1,0 +1,16 @@
+version: '3.9'
+
+networks:
+  dev_network:
+
+services:
+
+  db:
+    image: postgres:14.3-alpine3.15
+    ports:
+      - "5431:5432"
+    environment:
+      POSTGRES_USER: ${PS_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DB}
+
